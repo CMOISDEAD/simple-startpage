@@ -1,13 +1,33 @@
-<script setup>
+<script>
 import Section from "./Section.vue";
+
+export default {
+  name: "Sidebar",
+  data() {
+    return {
+      links: ["google.com", "cuevana.com", "devto.com", "reddit.com"],
+    };
+  },
+  components: {
+    Section,
+  },
+};
 </script>
 
 <template>
   <div class="container">
-    <Section title="Productivity" lorem="Only Apps" />
-    <Section title="Cool stuff" lorem="Downtime and Media" />
-    <Section title="Entertaiment" lorem="Files, Videos, Stream" />
-    <Section title="Ref" lorem="Docs, Code + Specs" />
+    <Section title="Productivity" lorem="Only Apps" v-bind:links="links" />
+    <Section
+      title="Cool stuff"
+      lorem="Downtime and Media"
+      v-bind:links="links"
+    />
+    <Section
+      title="Entertaiment"
+      lorem="Files, Videos, Stream"
+      v-bind:links="links"
+    />
+    <Section title="Ref" lorem="Docs, Code + Specs" v-bind:links="links" />
   </div>
 </template>
 
