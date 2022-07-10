@@ -15,7 +15,9 @@ export default {
       <h6 class="lorem">{{ lorem }}</h6>
     </div>
     <ul class="links">
-      <li v-for="(link, index) in links" :key="index">{{ link }}</li>
+      <li v-for="(link, index) in links" :key="index">
+        <a v-bind:href="link.link" target="_blank">{{ link.title }}</a>
+      </li>
     </ul>
   </div>
 </template>
@@ -24,31 +26,38 @@ export default {
 .box {
   display: flex;
   flex-flow: row nowrap;
-  padding: 5vh 5vw;
-  text-align: right;
+  padding: 5vh 0 5vw 0;
   color: #fbf1c7;
   transition: all 0.2s;
-
+  width: 90vw;
+  .info {
+    padding: 0 10vw;
+    width: 13vw;
+  }
   .links {
     display: none;
     list-style: none;
+    text-align: center;
   }
-
+  .links > li {
+    padding: 0 2vw;
+    a {
+      font-weight: bolder;
+      text-decoration: none;
+      color: #b8bb26;
+    }
+  }
   h3 {
     font-size: 2.5rem;
   }
-
   h6 {
     font-size: 0.9rem;
   }
-
   &:hover {
-    padding: 6vh 6vw;
-
+    padding-left: 2vw;
     .lorem {
       color: #548588;
     }
-
     .links {
       display: block;
       li {

@@ -5,7 +5,62 @@ export default {
   name: "Sidebar",
   data() {
     return {
-      links: ["google.com", "cuevana.com", "devto.com", "reddit.com"],
+      dev: [
+        {
+          title: "Github",
+          link: "https://github.com",
+        },
+        {
+          title: "Stackoverflow",
+          link: "https://stackoverflow.com",
+        },
+        {
+          title: "Gitlab",
+          link: "https://gitlab.com",
+        },
+        {
+          title: "FreeCodeCamp",
+          link: "https://freecodecamp.org",
+        },
+      ],
+      media: [
+        {
+          title: "youtube",
+          link: "https://youtube.com",
+        },
+        {
+          title: "Cuevana",
+          link: "https://Cuevana3.me",
+        },
+        {
+          title: "Unixporn",
+          link: "https://reddit.com/r/unixporn",
+        },
+        {
+          title: "Reddit",
+          link: "https://reddit.com",
+        },
+      ],
+      social: [
+        {
+          title: "Instagram",
+          link: "https://instagram.com",
+        },
+        {
+          title: "Twitter",
+          link: "https://twitter.com",
+        },
+      ],
+      news: [
+        {
+          title: "Hacker News",
+          link: "https://hackernews.org",
+        },
+        {
+          title: "guardian",
+          link: "https://guardian.com",
+        },
+      ],
     };
   },
   components: {
@@ -15,32 +70,26 @@ export default {
 </script>
 
 <template>
-  <div class="container">
-    <Section title="Productivity" lorem="Only Apps" v-bind:links="links" />
-    <Section
-      title="Cool stuff"
-      lorem="Downtime and Media"
-      v-bind:links="links"
-    />
+  <div class="sidebar">
+    <Section title="Development" lorem="Only Apps" v-bind:links="dev" />
     <Section
       title="Entertaiment"
-      lorem="Files, Videos, Stream"
-      v-bind:links="links"
+      lorem="Downtime and Media"
+      v-bind:links="media"
     />
-    <Section title="Ref" lorem="Docs, Code + Specs" v-bind:links="links" />
+    <Section
+      title="Social"
+      lorem="Files, Videos, Stream"
+      v-bind:links="social"
+    />
+    <Section title="News" lorem="Docs, Code + Specs" v-bind:links="news" />
   </div>
 </template>
 
 <style lang="scss" scoped>
-.container {
-  height: 100vh;
-  width: 35vw;
-  background: #1d20213d;
-  backdrop-filter: blur(20px);
-  color: #fbf1c7;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
-  align-items: flex-end;
+.sidebar {
+  z-index: 10;
+  position: absolute;
+  margin: 4vh 0;
 }
 </style>
