@@ -25,16 +25,17 @@ export default {
 <style lang="scss" scoped>
 .box {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   padding: 5vh 0 5vw 0;
   color: #fbf1c7;
   transition: all 0.2s;
   width: 90vw;
   .info {
     padding: 0 10vw;
-    width: 13vw;
+    width: 10vw;
   }
   .links {
+    transition: all 0.5s ease-out;
     display: none;
     list-style: none;
     text-align: center;
@@ -63,6 +64,14 @@ export default {
       li {
         display: inline-block;
       }
+    }
+  }
+
+  @media (max-width: 700px) {
+    padding: 8vh 5vw;
+    .info {
+      padding-left: 20vw;
+      width: 100vw;
     }
   }
 }

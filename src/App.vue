@@ -1,6 +1,5 @@
 <script>
 import Sidebar from "./components/Sidebar.vue";
-import silence from "./assets/silence.mp3";
 
 export default {
   name: "App",
@@ -11,7 +10,7 @@ export default {
   },
   methods: {
     playMusic(id) {
-      if (this.isPlayed) {
+      if (!this.isPlayed) {
         document.getElementById(id).play();
         this.isPlayed = !this.isPlayed;
       } else {
@@ -55,6 +54,13 @@ body {
   backdrop-filter: blur(20px);
   color: #fbf1c7;
 }
+
+@media (max-width: 1500px) {
+  .container {
+    width: 100vw;
+  }
+}
+
 .toggler {
   z-index: 10000;
   border: 0;
